@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import ij from "../img/ven.png";
 import { BsCartFill } from "react-icons/bs";
-import { FaBars } from "react-icons/fa";
+import { goThreeBars } from "react-icons/go";
 import { BiSearch } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -59,6 +59,7 @@ const Header = () => {
               <WrapIcon to="/product">
                 <RiProductHuntFill size="30px" color="gray" />
               </WrapIcon>
+              <goThreeBars size="10px" />
             </Iconholder>
 
             <Holder3>
@@ -79,9 +80,6 @@ const Header = () => {
                 </button>
               </Link>
             </Holder3>
-            <Menu>
-              <FaBars />
-            </Menu>
           </Holder>
         ) : (
           <Sign to="/signup">Login</Sign>
@@ -103,8 +101,17 @@ const Holder3 = styled.div`
   align-items: center;
   width: 150px;
   justify-content: space-between;
+  @media (max-width: 600px) and (min-width: 320px) {
+    display: none;
+  }
 `;
 const Iconholder = styled.div`
+  @media (max-width: 600px) and (min-width: 320px) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
   width: 250px;
   display: flex;
   align-items: center;
@@ -126,6 +133,9 @@ const Holders = styled(Link)`
   justify-content: center;
   text-decoration: none;
   color: black;
+  @media (min-width: 768px) {
+    padding: 10px;
+  }
   :hover {
     transform: scale(1.03);
     transition: all 350ms;
@@ -134,9 +144,7 @@ const Holders = styled(Link)`
 `;
 
 const Menu = styled.div`
-  display: none;
-
-  @media (max-width: 800px) {
+  @media (min-width: 768px) {
     display: block;
   }
 `;
@@ -218,7 +226,7 @@ const SearchDiv = styled.div`
   /* background-color: red; */
 `;
 const Holder = styled.div`
-  flex: 0.9;
+  /* flex: 0.4; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -239,8 +247,15 @@ const Holder = styled.div`
 `;
 const Logo = styled.div``;
 const Wrapper = styled.div`
-  width: 95%;
+  width: 89%;
+
+  // @media (min-width: 320px) {
+
+  // }
+
   display: flex;
+  /* background-color: blue; */
+  /* padding: 0 20px; */
   align-items: center;
   justify-content: space-between;
 `;
@@ -250,6 +265,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 80px;
+  /* min-width: 100vw; */
   border-bottom: 1px solid gray;
 `;
 // const Button = styled(Link)`

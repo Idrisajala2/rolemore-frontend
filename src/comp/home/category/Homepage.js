@@ -281,6 +281,7 @@ const FirstComp = styled.div`
   justify-content: space-between;
   margin-top: 50px;
   flex-wrap: wrap;
+  padding: 10px;
 `;
 const Hd = styled.div`
   display: flex;
@@ -385,27 +386,27 @@ const Recent = styled.div`
 `;
 const TextHolder = styled.div``;
 const Img = styled.img`
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 200px;
   object-fit: contain;
   /* background-color: rgba(0, 0, 0, 1); */
 `;
 const SmallImgHolder = styled.div`
-  width: 520px;
+  width: 450px;
   display: flex;
   font-size: 30px;
   align-items: center;
   justify-content: space-between;
 `;
 const BigImg = styled.div`
-  border-bottom: 5px;
+  /* border-bottom: 5px; */
 `;
 const BigImageHolder = styled.div`
   margin-bottom: 25px;
   border-radius: 10px;
   /* border: 1px solid lightgray; */
   height: 450px;
-  width: 680px;
+  width: 520px;
   /* background-color: rgba(0, 0, 0, 0.9); */
   background-image: url("/blue.png");
   background-position: center;
@@ -417,7 +418,7 @@ const Right = styled.div`
 `;
 const Left = styled.div``;
 const Wrapper = styled.div`
-  width: 85%;
+  width: 93%;
   height: 80%;
   min-height: 100vh;
   display: flex;

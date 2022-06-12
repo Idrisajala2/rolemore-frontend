@@ -74,7 +74,7 @@ const Signup = () => {
         <Box onSubmit={onSubmit} type="multipart/form-data">
           <ImageHolder>
             <Image src={image} />
-            <ImageLabel htmlFor="pix">Upload your Image</ImageLabel>
+            <ImageLabel htmlFor="pix"> upload Image</ImageLabel>
             <ImageInput
               id="pix"
               onChange={handleImage}
@@ -136,13 +136,13 @@ const ImageLabel = styled.label`
   transition: all 350ms;
   :hover {
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.04);
   }
 `;
 
 const ImageHolder = styled.div`
   width: 200px;
-  height: 70px;
+  height: 50px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -154,7 +154,7 @@ const Image = styled.img`
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  background-color: gray;
+  background-color: silver;
   /* margin-bottom: 5px; */
 
   transition: all 350ms;
@@ -169,6 +169,9 @@ const C = styled.div`
   font-weight: bold;
 `;
 const Butt = styled.button`
+  @media (max-width: 768px) and (min-width: 320) {
+    width:100px;
+  };
   display: flex;
   margin-top: 15px;
   outline: none;
@@ -176,12 +179,12 @@ const Butt = styled.button`
   font-size: 15px;
   font-weight: bold;
   border-radius: 3px;
-  padding: 14px 150px;
+  padding: 14px 90px;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   :hover {
-    cursor: pointer;
+    cursor: pointer;``
     transform: scale(1.05);
     transition: all 350ms;
   }
@@ -190,19 +193,21 @@ const Butt = styled.button`
   }
 `;
 const SmallText = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   color: silver;
   margin-top: 10px;
   width: 400px;
+  text-align: center;
 `;
 const Bigtxt = styled.div`
-  font-size: 27px;
+  font-size: 25px;
   font-weight: bold;
+  text-align: center;
 `;
 const Uptextholder = styled.div`
   height: 100px;
   margin-top: 30px;
-  width: 220px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,6 +243,9 @@ const Div1 = styled.div`
 `;
 
 const Box1 = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -250,6 +258,9 @@ const Box1 = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 700px) and (min-width: 320px) {
+    display: none;
+  }
 `;
 const B = styled.div`
   color: gray;
@@ -259,7 +270,7 @@ const B = styled.div`
 const OR = styled.div`
   margin-bottom: 20px;
   font-size: 15px;
-  width: 400px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -293,7 +304,7 @@ const Div = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 14px 180px;
+  padding: 13px 120px;
   border-radius: 3px;
   outline: none;
   border: none;
@@ -313,7 +324,7 @@ const Input = styled.input`
   outline: none;
 `;
 const InputHolder = styled.div`
-  height: 29px;
+  height: 40px;
   width: 85%;
   border: 1px solid #eee;
   margin-bottom: 20px;
@@ -323,10 +334,17 @@ const InputHolder = styled.div`
   border-radius: 2px;
 `;
 const Box = styled.form`
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
   height: 100%;
+  /* min-height: 70vh; */
   width: 40%;
   display: flex;
   align-items: center;
@@ -336,13 +354,14 @@ const Box = styled.form`
 
 const Wrapper = styled.div`
   width: 80%;
-  height: 700px;
+  height: 620px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 70vh;
 `;
 const Container = styled.div`
-  height: 600px;
+  height: 700px;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -350,6 +369,7 @@ const Container = styled.div`
   justify-content: center;
   /* background: #232a34; */
   opacity: 0.9;
+  flex-wrap: wrap;
 `;
 
 // import React, { useState } from "react";

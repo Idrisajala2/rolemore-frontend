@@ -40,19 +40,23 @@ export default Landing;
 // const Div = styled.div``
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh -80px);
+  height: calc(100vh 80px);
   /* min-height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   background-position: center;
   background-size: cover;
 `;
 const Wrapper = styled.div`
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
   width: 85%;
   min-height: 100vh;
-  height: 300px;
+  // height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +65,17 @@ const Wrapper = styled.div`
 const Content = styled.div`
   /* display: flex; */
   height: 500px;
-  width: 300px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 const Maquee = styled.h1`
   span {
@@ -69,16 +83,16 @@ const Maquee = styled.h1`
   }
   height: 100px;
   color: white;
-  width: 650px;
+  width: 450px;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 45px;
 `;
 const Description = styled.div`
   height: 130px;
-  width: 750px;
+  width: 600px;
   color: white;
   height: 190px;
-  font-size: 25px;
+  font-size: 20px;
 `;
 const Button = styled(Link)`
   padding: 14px 50px;
