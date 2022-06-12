@@ -29,7 +29,7 @@ const Signin = () => {
   const onSubmit = handleSubmit(async (value) => {
     console.log(value);
     const { password, email } = value;
-    const mainURL = "https://rolemore-back.herokuapp.com";
+    const mainURL = "https://rolemore-back.herokuapp.com/";
     const url = `${mainURL}/api/user/signin`;
 
     await axios.post(url, { email, password }).then((res) => {

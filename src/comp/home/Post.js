@@ -44,7 +44,7 @@ const Post = () => {
   const submitForm = handleSubmit(async (value) => {
     const { price, name, description } = value;
     console.log(value);
-    const path = "https://rolemore-back.herokuapp.com";
+    const path = "https://rolemore-back.herokuapp.com/";
     const url = `${path}/api/item/${user._id}/create`;
 
     const formData = new FormData();
