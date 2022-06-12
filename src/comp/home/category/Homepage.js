@@ -18,7 +18,7 @@ const Homepage = () => {
 
   const onGetData = async () => {
     try {
-      const mainRoute = "https://rolemore-back.herokuapp.com/";
+      const mainRoute = "https://rolemore-back.herokuapp.com";
       const url = `${mainRoute}/api/item/all`;
 
       await axios.get(url).then((res) => {

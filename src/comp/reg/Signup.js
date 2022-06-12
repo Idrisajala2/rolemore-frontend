@@ -46,7 +46,7 @@ const Signup = () => {
   const onSubmit = handleSubmit(async (value) => {
     console.log(value);
     const { userName, password, email } = value;
-    const mainURL = "https://rolemore-back.herokuapp.com/";
+    const mainURL = "https://rolemore-back.herokuapp.com";
     const url = `${mainURL}/api/user/register`;
 
     const formData = new FormData();
