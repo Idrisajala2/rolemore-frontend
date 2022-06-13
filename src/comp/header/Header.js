@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ij from "../img/ven.png";
 import { BsCartFill } from "react-icons/bs";
@@ -16,6 +16,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../Globalstate/GlobalState";
 
 const Header = () => {
+  const [bar, setBar] = useState(false);
+  const [state, setState] = useState(false);
+
+  const menuBar = () => {
+    setBar(!bar);
+  };
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.persistedReducer.user);
@@ -23,78 +29,129 @@ const Header = () => {
   useEffect(() => {}, []);
 
   return (
-    <Container>
-      <Wrapper>
-        <Holders to="/home">
-          <Img src={ij} alt="think" />
-          <Brand to="/">Rolemore</Brand>
-        </Holders>
-        {user ? (
-          <Holder>
-            <SearchDiv>
-              <Search>
-                <Icon>
-                  <BiSearch />
-                </Icon>
-                <Input placeholder="Search" />
-              </Search>
-            </SearchDiv>
+    <>
+      <Container>
+        <Wrapper>
+          <Holders to="/home">
+            <Img src={ij} alt="think" />
+            <Brand to="/">Rolemore</Brand>
+          </Holders>
+          {user ? (
+            <Holder>
+              <SearchDiv>
+                <Search>
+                  <Icon>
+                    <BiSearch />
+                  </Icon>
+                  <Input placeholder="Search" />
+                </Search>
+              </SearchDiv>
 
-            <Iconholder>
-              <WrapIcon to="/post">
-                <AiOutlineUser size="30px" color="gray" />
-              </WrapIcon>
+              <Iconholder>
+                <WrapIcon to="/post">
+                  <AiOutlineUser size="30px" color="gray" />
+                </WrapIcon>
 
-              <WrapIcon to="/home">
-                <AiFillHome size="30px" color="gray" />
-              </WrapIcon>
+                <WrapIcon to="/home">
+                  <AiFillHome size="30px" color="gray" />
+                </WrapIcon>
 
-              <WrapIcon to="/about">
-                <AiFillCustomerService size="30px" color="gray" />
-              </WrapIcon>
+                <WrapIcon to="/about">
+                  <AiFillCustomerService size="30px" color="gray" />
+                </WrapIcon>
 
-              <WrapIcon to="/home">
-                <AiOutlineShoppingCart size="30px" color="gray" />
-              </WrapIcon>
-              <WrapIcon to="/product">
-                <RiProductHuntFill size="30px" color="gray" />
-              </WrapIcon>
-            </Iconholder>
+                <WrapIcon to="/home">
+                  <AiOutlineShoppingCart size="30px" color="gray" />
+                </WrapIcon>
+                <WrapIcon to="/product">
+                  <RiProductHuntFill size="30px" color="gray" />
+                </WrapIcon>
+              </Iconholder>
 
-            <Holder3>
-              <Profile>
-                <Icon2>
-                  <img src={user?.avatar} />
-                </Icon2>
-              </Profile>
+              <Holder3>
+                <Profile>
+                  <Icon2>
+                    <img src={user?.avatar} />
+                  </Icon2>
+                </Profile>
 
-              <Link to="/signIn">
-                <button
+                <Link to="/signIn">
+                  <button
+                    onClick={() => {
+                      dispatch(signOut());
+                      navigate("/signIn");
+                    }}
+                  >
+                    Log Out
+                  </button>
+                </Link>
+              </Holder3>
+              <Goholder>
+                <Icon3
+                  id="bars"
+                  size="40px"
                   onClick={() => {
-                    dispatch(signOut());
-                    navigate("/signIn");
+                    document.getElementById("Slide").style.top = "0px";
+                    document.getElementById("bars").style.display = "none";
+                    document.getElementById("cancle").style.display = "block";
                   }}
-                >
-                  Log Out
-                </button>
-              </Link>
-            </Holder3>
-            <Goholder>
-              <Icon3 />
-              <Icon4 />
-            </Goholder>
-          </Holder>
-        ) : (
-          <Sign to="/signup">Login</Sign>
-        )}
-      </Wrapper>
-    </Container>
+                />
+                <Icon4
+                  id="cancle"
+                  size="40px"
+                  onClick={() => {
+                    document.getElementById("Slide").style.top = "700px";
+                    document.getElementById("bars").style.display = "block";
+                    document.getElementById("cancle").style.display = "none";
+                  }}
+                  style={{ display: "none" }}
+                />
+              </Goholder>
+            </Holder>
+          ) : (
+            <Sign to="/signup">Login</Sign>
+          )}
+        </Wrapper>
+      </Container>
+      <Slide
+        id="Slide"
+        onClick={() => {
+          document.getElementById("Slide").style.top = "700px";
+          document.getElementById("bars").style.display = "block";
+          document.getElementById("cancle").style.display = "none";
+        }}
+      >
+        <WrapIcon to="/product">
+          <RiProductHuntFill size="30px" color="gray" />
+        </WrapIcon>
+      </Slide>
+    </>
   );
 };
 export default Header;
 // const Menu = styled.div``
 // const Menu = styled.div``
 // const Menu = styled.div``
+
+const Slide = styled.div`
+  overflow: hidden;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+  color: #fff;
+  position: fixed;
+  left: 0px;
+  top: 700px;
+  transition: all 2s;
+  z-index: 1;
+  /* ::before{
+        content: "";
+        color: #fff;
+    } */
+`;
 const Icon4 = styled(GiCancel)`
   height: 35px;
   width: 35px;
@@ -106,8 +163,8 @@ const Icon3 = styled(GoThreeBars)`
   color: silver;
 `;
 const Goholder = styled.div`
-  width: 400px;
-  margin-left: 0px;
+  width: 300px;
+  /* margin-left: 0px; */
   align-items: center;
   justify-content: center;
   display: flex;
@@ -127,6 +184,9 @@ const Holder3 = styled.div`
   align-items: center;
   width: 150px;
   justify-content: space-between;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 const Iconholder = styled.div`
   @media (max-width: 600px) and (min-width: 320px) {
@@ -223,13 +283,13 @@ const Button = styled.button`
 const Input = styled.input`
   border: 0;
   outline: none;
-  width: 540px;
+  width: 500px;
   padding: 10px;
 `;
 const Icon = styled.div``;
 const Search = styled.div`
   border: 1px solid lightgray;
-  width: 600px;
+  width: 550px;
   height: 40px;
   display: flex;
   border-radius: 5px;
@@ -291,6 +351,8 @@ const Container = styled.div`
   height: 80px;
   min-width: 100vw;
   border-bottom: 1px solid gray;
+  z-index: 1;
+  /* position: fixed; */
 `;
 // const Button = styled(Link)`
 //   padding: 5px 25px;
