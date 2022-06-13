@@ -282,6 +282,7 @@ const FirstComp = styled.div`
   margin-top: 50px;
   flex-wrap: wrap;
   padding: 10px;
+  background-color: blue;
 `;
 const Hd = styled.div`
   display: flex;
@@ -369,6 +370,7 @@ const Detail = styled.div`
     font-size: 20px;
     color: lightgrey;
     width: 590px;
+    background-color: green;
   }
 `;
 const ProductNew = styled.div`
@@ -407,6 +409,8 @@ const BigImageHolder = styled.div`
   /* border: 1px solid lightgray; */
   height: 450px;
   width: 520px;
+  background-color: orange;
+
   /* background-color: rgba(0, 0, 0, 0.9); */
   background-image: url("/blue.png");
   background-position: center;
@@ -425,10 +429,13 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: green;
 `;
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  background-color: green;
+
   min-height: 100vh;
   display: flex;
   align-items: center;

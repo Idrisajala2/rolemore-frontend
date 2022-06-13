@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import ij from "../img/ven.png";
 import { BsCartFill } from "react-icons/bs";
-import { goThreeBars } from "react-icons/go";
+import { GoThreeBars, goThreeBars } from "react-icons/go";
 import { BiSearch } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 
-import { RiArrowDropDownLine } from "react-icons/ri";
+import { GiCancel } from "react-icons/gi";
 import { AiFillCustomerService } from "react-icons/ai";
 import { RiProductHuntFill } from "react-icons/ri";
 
@@ -59,7 +59,6 @@ const Header = () => {
               <WrapIcon to="/product">
                 <RiProductHuntFill size="30px" color="gray" />
               </WrapIcon>
-              <goThreeBars size="10px" />
             </Iconholder>
 
             <Holder3>
@@ -80,6 +79,10 @@ const Header = () => {
                 </button>
               </Link>
             </Holder3>
+            <Goholder>
+              <Icon3 />
+              <Icon4 />
+            </Goholder>
           </Holder>
         ) : (
           <Sign to="/signup">Login</Sign>
@@ -92,18 +95,38 @@ export default Header;
 // const Menu = styled.div``
 // const Menu = styled.div``
 // const Menu = styled.div``
-// const Menu = styled.div``
+const Icon4 = styled(GiCancel)`
+  height: 35px;
+  width: 35px;
+  color: silver;
+`;
+const Icon3 = styled(GoThreeBars)`
+  width: 35px;
+  height: 35px;
+  color: silver;
+`;
+const Goholder = styled.div`
+  width: 400px;
+  margin-left: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 const WrapIcon = styled(Link)`
   cursor: pointer;
+  @media (max-width: 768px) and (min-width: 320px) {
+    display: none;
+  }
 `;
 const Holder3 = styled.div`
   display: flex;
   align-items: center;
   width: 150px;
   justify-content: space-between;
-  @media (max-width: 600px) and (min-width: 320px) {
-    display: none;
-  }
 `;
 const Iconholder = styled.div`
   @media (max-width: 600px) and (min-width: 320px) {
@@ -161,11 +184,7 @@ const Sign = styled(Link)`
     text-decoration: underline;
   }
 `;
-const Icon4 = styled(BsCartFill)`
-  height: 20px;
-  width: 20px;
-`;
-const Icon3 = styled.div``;
+
 const Icon2 = styled.div`
   width: 40px;
   height: 40px;
@@ -204,13 +223,13 @@ const Button = styled.button`
 const Input = styled.input`
   border: 0;
   outline: none;
-  width: 340px;
+  width: 540px;
   padding: 10px;
 `;
 const Icon = styled.div``;
 const Search = styled.div`
   border: 1px solid lightgray;
-  width: 400px;
+  width: 600px;
   height: 40px;
   display: flex;
   border-radius: 5px;
@@ -219,11 +238,14 @@ const Search = styled.div`
 `;
 const SearchDiv = styled.div`
   /* width: 100px; */
-  flex: 0.5;
+  /* flex: 0.5; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* background-color: red; */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 const Holder = styled.div`
   /* flex: 0.4; */
@@ -242,13 +264,13 @@ const Holder = styled.div`
   }
 
   @media (max-width: 800px) {
-    display: none;
+    /* display: none; */
   }
 `;
 const Logo = styled.div``;
 const Wrapper = styled.div`
   width: 89%;
-
+  /* background-color: green; */
   // @media (min-width: 320px) {
 
   // }
@@ -261,11 +283,13 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
+  /* background-color: yellow; */
+
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80px;
-  /* min-width: 100vw; */
+  min-width: 100vw;
   border-bottom: 1px solid gray;
 `;
 // const Button = styled(Link)`

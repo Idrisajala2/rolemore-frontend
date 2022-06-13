@@ -170,8 +170,8 @@ const C = styled.div`
 `;
 const Butt = styled.button`
   @media (max-width: 768px) and (min-width: 320) {
-    width:100px;
-  };
+    padding: 10px 40px;
+  }
   display: flex;
   margin-top: 15px;
   outline: none;
@@ -184,7 +184,7 @@ const Butt = styled.button`
   justify-content: center;
   background-color: transparent;
   :hover {
-    cursor: pointer;``
+    cursor: pointer;
     transform: scale(1.05);
     transition: all 350ms;
   }
@@ -305,6 +305,7 @@ const Div = styled.div`
 
 const Button = styled.button`
   padding: 13px 120px;
+
   border-radius: 3px;
   outline: none;
   border: none;
@@ -334,7 +335,7 @@ const InputHolder = styled.div`
   border-radius: 2px;
 `;
 const Box = styled.form`
-  @media (max-width: 768px) and (min-width: 320px) {
+  @media (max-width: 768px) and (min-width: 32px) {
     width: 520px;
     display: flex;
     align-items: center;

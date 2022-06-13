@@ -40,7 +40,7 @@ export default Landing;
 // const Div = styled.div``
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh 80px);
+  height: calc(100vh -80px);
   /* min-height: 100vh; */
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
   /* display: flex; */
   height: 500px;
-  width: 600px;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +85,7 @@ const Maquee = styled.h1`
   color: white;
   width: 450px;
   font-weight: bold;
-  font-size: 45px;
+  font-size: 40px;
 `;
 const Description = styled.div`
   height: 130px;

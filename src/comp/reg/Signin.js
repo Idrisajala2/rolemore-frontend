@@ -68,10 +68,6 @@ const Signin = () => {
           </OR>
           <Button type="submit">Login</Button>
 
-          <Butt>
-            <AiOutlineGoogle size="17px" color="#004080" />
-            <div>Signin with Google</div>
-          </Butt>
           <Div>
             <H1>dont have an account</H1> <H2 to="/signup">sign up</H2>
           </Div>
@@ -95,6 +91,7 @@ export default Signin;
 // const Div1 = styled.div``;
 const C = styled.div`
   font-weight: bold;
+  font-size: 20px;
 `;
 const Butt = styled.button`
   display: flex;
@@ -117,18 +114,22 @@ const Butt = styled.button`
   }
 `;
 const SmallText = styled.div`
-  font-size: 10px;
+  font-size: 23px;
   color: silver;
   margin-top: 10px;
+  width: 500px;
 `;
 const Bigtxt = styled.div`
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 `;
 const Uptextholder = styled.div`
-  height: 100px;
-  margin-top: 30px;
-  width: 220px;
+  height: 200px;
+  /* background-color: blue; */
+  margin-top: 10px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
 `;
 const Img = styled.img`
   height: 100%;
@@ -137,8 +138,8 @@ const Img = styled.img`
   border-radius: 100%;
 `;
 const Imgholder = styled.div`
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,11 +159,14 @@ const Div1 = styled.div`
 `;
 
 const Box1 = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  height: 85%;
-  width: 40%;
+  height: 100%;
+  width: 50%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -173,12 +177,13 @@ const Box1 = styled.div`
 `;
 const B = styled.div`
   color: gray;
+  font-size: 20px;
 `;
 
 const OR = styled.div`
   margin-bottom: 20px;
   font-size: 9px;
-  width: 190px;
+  width: 450px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,11 +191,12 @@ const OR = styled.div`
 
 const H1 = styled.div`
   color: gray;
-  font-size: smaller;
+  font-size: 25px;
 `;
 const H2 = styled(Link)`
   font-weight: bold;
-  color: black;
+  color: blue;
+  font-size: 20px;
   text-decoration: none;
   :hover {
     cursor: pointer;
@@ -210,13 +216,13 @@ const Div = styled.div`
 `;
 
 const Button = styled.button`
-  padding: 7px 95px;
+  padding: 10px 200px;
   border-radius: 3px;
   outline: none;
   border: none;
   background-color: black;
   color: #fff;
-  font-size: 12px;
+  font-size: 20px;
   :hover {
     transform: scale(1.1);
     transition: all 350ms;
@@ -231,7 +237,7 @@ const Input = styled.input`
   outline: none;
 `;
 const InputHolder = styled.div`
-  height: 29px;
+  height: 40px;
   width: 85%;
   border: 1px solid #eee;
   margin-bottom: 20px;
@@ -241,11 +247,15 @@ const InputHolder = styled.div`
   border-radius: 2px;
 `;
 const Box = styled.form`
+  @media (max-width: 768px) {
+    width: 500px;
+  }
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  height: 85%;
-  width: 30%;
+  height: 100%;
+  width: 50%;
+  /* padding: 10px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,11 +263,13 @@ const Box = styled.form`
 `;
 
 const Wrapper = styled.div`
+  flex-wrap: wrap;
   width: 80%;
-  height: 500px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 80vh;
 `;
 const Container = styled.div`
   height: 600px;
