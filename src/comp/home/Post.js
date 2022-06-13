@@ -232,10 +232,12 @@ const ImageLabel = styled.label`
 `;
 
 const ImageHolder = styled.div`
-  width: 100%;
+  width: 95%;
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
 `;
 
 const Image = styled.img`
@@ -254,8 +256,8 @@ const Image = styled.img`
 const Card = styled.form`
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  width: 500px;
-  min-height: 650px;
+  width: 450px;
+  min-height: 400px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -264,8 +266,8 @@ const Card = styled.form`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 70%;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -273,6 +275,10 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 70px);
-  padding-top: 70px;
+  height: 100%;
+  /* height: calc(100vh - 80px); */
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

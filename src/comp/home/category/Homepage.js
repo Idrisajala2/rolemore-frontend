@@ -282,7 +282,7 @@ const FirstComp = styled.div`
   margin-top: 50px;
   flex-wrap: wrap;
   padding: 10px;
-  background-color: blue;
+  /* background-color: blue; */
 `;
 const Hd = styled.div`
   display: flex;
@@ -409,7 +409,7 @@ const BigImageHolder = styled.div`
   /* border: 1px solid lightgray; */
   height: 450px;
   width: 520px;
-  background-color: orange;
+  /* background-color: orange; */
 
   /* background-color: rgba(0, 0, 0, 0.9); */
   background-image: url("/blue.png");
@@ -429,12 +429,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: green;
+  /* background-color: green; */
 `;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  background-color: green;
+  /* background-color: green; */
 
   min-height: 100vh;
   display: flex;

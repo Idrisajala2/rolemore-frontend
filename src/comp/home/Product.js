@@ -290,8 +290,8 @@ const Holders = styled.div`
     transform: scale(1.05);
   }
   padding: 10px;
-  height: 290px;
-  width: 250px;
+  height: 270px;
+  width: 210px;
   border: 1px solid silver;
   display: flex;
   align-items: flex-start;
@@ -308,6 +308,7 @@ const Container = styled.div`
   min-height: 100vh;
   width: 100%;
   flex-wrap: wrap;
+  padding-top: 100px;
 `;
 const Wrapper = styled.div`
   display: flex;

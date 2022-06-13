@@ -91,7 +91,7 @@ const Header = () => {
                   id="bars"
                   size="40px"
                   onClick={() => {
-                    document.getElementById("Slide").style.top = "0px";
+                    document.getElementById("Slide").style.top = "2px";
                     document.getElementById("bars").style.display = "none";
                     document.getElementById("cancle").style.display = "block";
                   }}
@@ -121,9 +121,64 @@ const Header = () => {
           document.getElementById("cancle").style.display = "none";
         }}
       >
-        <WrapIcon to="/product">
-          <RiProductHuntFill size="30px" color="gray" />
-        </WrapIcon>
+        <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+          <Nav
+            onClick={() => {
+              document.getElementById("Slide").style.top = "700px";
+              document.getElementById("bars").style.display = "block";
+              document.getElementById("cancle").style.display = "none";
+            }}
+          >
+            <AiFillHome size="30px" color="gray" />
+          </Nav>
+        </Link>
+        <Link
+          to="/collecttion"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
+          <Nav
+            onClick={() => {
+              document.getElementById("Slide").style.top = "700px";
+              document.getElementById("bars").style.display = "block";
+              document.getElementById("cancle").style.display = "none";
+            }}
+          >
+            Collection
+          </Nav>
+        </Link>
+
+        <Link to="/about" style={{ textDecoration: "none", color: "#fff" }}>
+          <Nav
+            onClick={() => {
+              document.getElementById("Slide").style.top = "700px";
+              document.getElementById("bars").style.display = "block";
+              document.getElementById("cancle").style.display = "none";
+            }}
+          >
+            About
+          </Nav>
+        </Link>
+
+        <Link to="/product" style={{ textDecoration: "none", color: "#fff" }}>
+          <Nav
+            onClick={() => {
+              document.getElementById("Slide").style.top = "700px";
+              document.getElementById("bars").style.display = "block";
+              document.getElementById("cancle").style.display = "none";
+            }}
+          >
+            <RiProductHuntFill size="30px" color="gray" />
+          </Nav>
+        </Link>
+
+        {user ? (
+          <Link to="/post">
+            <Nav>Upload</Nav>
+          </Link>
+        ) : null}
+        <Link to="/signUp" style={{ textDecoration: "none", color: "#fff" }}>
+          <Nav>Log In</Nav>
+        </Link>
       </Slide>
     </>
   );
@@ -131,12 +186,12 @@ const Header = () => {
 export default Header;
 // const Menu = styled.div``
 // const Menu = styled.div``
-// const Menu = styled.div``
+const Nav = styled.div``;
 
 const Slide = styled.div`
   overflow: hidden;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
@@ -145,8 +200,13 @@ const Slide = styled.div`
   position: fixed;
   left: 0px;
   top: 700px;
+  bottom: 10px;
   transition: all 2s;
   z-index: 1;
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
   /* ::before{
         content: "";
         color: #fff;
@@ -226,11 +286,7 @@ const Holders = styled(Link)`
   }
 `;
 
-const Menu = styled.div`
-  @media (min-width: 768px) {
-    display: block;
-  }
-`;
+const Menu = styled.div``;
 const Sign = styled(Link)`
   text-decoration: none;
 
