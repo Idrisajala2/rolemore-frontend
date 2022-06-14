@@ -235,6 +235,9 @@ const Holder = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-top: 200px;
+  }
 `;
 const Img = styled.img`
   height: 120px;
@@ -334,6 +337,10 @@ const Con = styled.div`
   font-size: 25px;
   margin-top: 20px;
   color: gray;
+  @media (max-width: 768px) and (min-width: 320px) {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
 `;
 const Tin = styled.div`
   height: 2px;

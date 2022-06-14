@@ -109,7 +109,7 @@ const Header = () => {
               </Goholder>
             </Holder>
           ) : (
-            <Sign to="/signup">Login</Sign>
+            <Sign to="/signin">Login</Sign>
           )}
         </Wrapper>
       </Container>
@@ -244,7 +244,7 @@ const Holder3 = styled.div`
   align-items: center;
   width: 150px;
   justify-content: space-between;
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
