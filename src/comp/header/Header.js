@@ -34,7 +34,7 @@ const Header = () => {
         <Wrapper>
           <Holders to="/home">
             <Img src={ij} alt="think" />
-            <Brand to="/">Rolemore</Brand>
+            <Brand to="/home">Rolemore</Brand>
           </Holders>
           {user ? (
             <Holder>
