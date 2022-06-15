@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     flex-direction: column-reverse;
   }
-  width: 85%;
+  width: 90%;
   min-height: 100vh;
   // height: 300px;
   display: flex;
@@ -64,11 +64,11 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   /* display: flex; */
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 550px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  /* justify-content: center; */
   flex-direction: column;
   @media (max-width: 768px) {
     text-align: center;

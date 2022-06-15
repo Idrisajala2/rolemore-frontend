@@ -405,7 +405,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 80px;
-  min-width: 100vw;
+  /* min-width: 100vw; */
   border-bottom: 1px solid gray;
   z-index: 1;
   /* position: fixed; */

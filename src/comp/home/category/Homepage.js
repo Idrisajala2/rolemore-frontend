@@ -12,7 +12,7 @@ const Homepage = () => {
   const user = useSelector((state) => state.user);
   const product = useSelector((state) => state.persistedReducer.product);
 
-  console.log(product);
+  // console.log(product);
 
   // const id = user._id;
 
@@ -22,9 +22,11 @@ const Homepage = () => {
       const url = `${mainRoute}/api/item/all`;
 
       await axios.get(url).then((res) => {
-        setGetData(res.data.data);
+        console.log(res.data.data);
         dispatch(addProduct(res.data.data));
       });
+
+      console.log(product);
 
       console.log(getData);
     } catch (error) {
@@ -37,9 +39,9 @@ const Homepage = () => {
     AOS.refresh();
   }, []);
 
-  // useEffect(() => {
-
-  // }, []);
+  useEffect(() => {
+    onGetData();
+  }, []);
   return (
     <div>
       <Container>
