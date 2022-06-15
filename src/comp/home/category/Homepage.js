@@ -116,7 +116,7 @@ const Homepage = () => {
                     <Pimg src={props.avatar} />
                   </PImageHolder>
                   <ProductNam>{props.description}</ProductNam>
-                  <PPrice>{props.price}g</PPrice>
+                  <PPrice>{props.price}</PPrice>
                 </Holder>
               );
             })}
